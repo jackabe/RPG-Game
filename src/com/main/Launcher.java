@@ -1,5 +1,7 @@
 package com.main;
 
+import com.main.game.Welcome;
+
 public class Launcher {
 
 	public static void main(String[] args) {
@@ -7,6 +9,11 @@ public class Launcher {
 		//Iniatlise all methods needed.
 		//Put knife in inventory
 		//Welcome message
+		
+		System.out.println(Welcome.getWelcome());
+		
+		System.out.println("================================");
+		
 
 	}
 

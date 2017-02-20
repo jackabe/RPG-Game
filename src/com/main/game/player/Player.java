@@ -3,7 +3,7 @@ package com.main.game.player;
 public class Player {
 	
 	private static int playerHealth;
-	private static int playerEnergy;
+	public static int playerEnergy;
 	
 	private String playerName;
 	
@@ -40,6 +40,14 @@ public class Player {
 		Player.playerEnergy = playerEnergy;
 	}
 	
+	public static void decreasePlayerEnergy(int playerEnergy) {
+		Player.playerEnergy = playerEnergy - 25;
+	}
+	
+	public static void increasePlayerEnergy(int playerEnergy) {
+		Player.playerEnergy = playerEnergy + 25;
+	}
+
 
 	
 

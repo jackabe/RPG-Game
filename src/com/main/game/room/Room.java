@@ -36,7 +36,6 @@ public class Room {
 		return "";
 		
 		
-		
 	}
 	
 	public String getDirection() {

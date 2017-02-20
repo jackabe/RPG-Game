@@ -1,0 +1,8 @@
+1 = Spider
+2 = Rat
+3 = Skeleton
+4 = Zombie
+5 = Ghost
+6 = Demon
+7 = Lesser Dragon
+8 = King Dragon

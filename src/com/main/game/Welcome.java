@@ -2,13 +2,17 @@ package com.main.game;
 
 public class Welcome {
 	
-	public String Welcome = "It was the best of times, it was the worst of times,\n"
-	         + "it was the age of wisdom, it was the age of foolishness,\n"
-	         + "it was the epoch of belief, it was the epoch of incredulity,\n"
-	         + "it was the season of Light, it was the season of Darkness,\n"
-	         + "it was the spring of hope, it was the winter of despair,\n"
-	         + "we had everything before us, we had nothing before us";
-
-				
+	private static String Welcome = "WELCOME TO DUNGEON ESCAPE!!!\n"
+	         + "IN THIS GAME YOU NEED TO PASS ROOM TO ROOM PICKING UP ITEMS AS YOU GO,\n"
+	         + "TO HELP YOU DEFEAT THE MONSTERS THAT AWAIT..........\n"
+	         + "AS YOU PASS THROUGH EACH ROOM AND TAKE ON A MOSTER YOUR ENERGY AND HEALTH LEVEL MAY DECREASE.\n"
+	         + "FIND FOOD AS YOU GO TO HELP YOU RESTORE THIS ENERY AND HEALTH.\n"
+	         + "YOU HAVE BEEN GIVEN A KNIFE AND YOUR ENERGY AND HEALTH LEVEL HAVE BEEN SET TO 100.\n"
+			 + "GOOD LUCK!!";
+	
+	public static String getWelcome() {
+		return Welcome;
+	}
+		
 	}
 
