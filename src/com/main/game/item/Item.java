@@ -1,46 +1,77 @@
 package com.main.game.item;
 
+import java.util.Random;
+
+import com.main.game.player.Player;
+
 public class Item {
 	
+	private static int itemId;
 	
-	public Item(String response, int itemId) {
+	public static String getItem(int itemId) {
 
-		String itemName;
 	    switch (itemId) {
-	        case 1:  itemName = "Knife";
-	                 break;
-	        case 2:  itemName = "Rat Meat";
-	                 break;
-	        case 3:  itemName = "Boar Meat";
-	                 break;
-	        case 4:  itemName = "Chicken Meat";
-	                 break;
-	        case 5:  itemName = "Trout Meat";
-	                 break;
-	        case 6:  itemName = "Iron Sword";
-	                 break;
-	        case 7:  itemName = "Boots of Lightness";
-	                 break;
-	        case 8:  itemName = "Diamond Sword";
-	                 break;
-
-	        default: itemName = "Invalid item";
-	                 break;
-	    }
 	    
-		if (response == "yes") {
-			
-			System.out.println("The current item is : " + itemName + " and its damage is: ");
+	    	case 0: return "There is no random item in here, bad luck!";
+	    
+	        case 1:  return "Diamond";
+	        
+	        case 2:  return "Healing Potion";
+	         
+	        case 3:  return "Boar Meat";
+	         
+	        case 4:  return "Chicken Meat";
+	          
+	        case 5:  return "Trout Meat";
+	           
+	        case 6:  return "Gold";
+	         
+	        case 7:  return "Apple";
+	       
+	        case 8:  return "Energy Potion";   
+	        
+	        case 9:  return "Knife";
+	        
+	        case 10:  return "Rat Meat";
+	         
+	        case 11:  return "Pork Meat ";
+	         
+	        case 12:  return "Iron Sword";
+	          
+	        case 13:  return "Diamond Sword";
+	           
+	        case 14:  return "Boots of Lightness"; 
 
 		}
-		
-        else {
-        	System.out.println("You have chosen not to examine the item");
+	    
+		return "";
+	    
 
-        }
 	}
+
+	
+	public static int getRandomItem() {
+		
+		double d = Math.random();
+		
+		if (d < 0.4) {
+	
+			Random rand = new Random();
+			int randomItem = rand.nextInt(8) + 1;
+			return randomItem;
+			
+		}
+		
+		else {
+			
+			return 0;
+			
+		}
 		
 	}
+	
+
+}
 
 
 

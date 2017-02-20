@@ -41,6 +41,8 @@ public class EnergyTest {
 			else {
 				
 				System.out.println("You enter the " + Room.getRoom(3) + ", where there is a " + NPC.getNPC(3));
+				Player.decreasePlayerEnergy(Player.getPlayerEnergy());		
+				System.out.println("You use some energy overcoming an obstacle. Your energy level is now " + Player.getPlayerEnergy());
 				
 			}
 			
