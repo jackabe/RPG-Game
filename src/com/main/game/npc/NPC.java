@@ -1,9 +1,12 @@
 package com.main.game.npc;
+import com.main.game.player.Combat;
+import com.main.game.player.Player;
 
 public class NPC {
 	
-//	private String npcName;
-//	private static int npcId;
+	public static int npcHealth;
+	public static int npcStrength;
+	private static int npcHit;
 
 
 	public static String getNPC(int npcId) {
@@ -18,7 +21,7 @@ public class NPC {
 			
 			case 4: return "Zombie";
 			
-			case 5: return "Ghost";
+			case 5: return "Ghost"; 
 			
 			case 6: return "Demon";
 			
@@ -28,9 +31,24 @@ public class NPC {
 			
 		}
 		return "";
+			
+	}
+	
+	public static int getNpcHealth() {
 		
-		
+		return npcHealth;
 		
 	}
+//	
+//	
+//	public static int getNpcHit() {
+//		
+//		return npcHit;
+//		
+//		
+//		
+//	}
+//	
+
 
 }

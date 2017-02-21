@@ -3,7 +3,7 @@ package com.main.game.player;
 public class Player {
 	
 	private static int playerHealth;
-	public static int playerEnergy;
+	public static int playerEnergy = 100;
 	
 	private String playerName;
 	
@@ -48,6 +48,9 @@ public class Player {
 		Player.playerEnergy = playerEnergy + 25;
 	}
 
+	public static void printEnergyLevel() {
+	    System.out.println("Your Current Energy Level is: " + getPlayerEnergy());
+}
 
 	
 

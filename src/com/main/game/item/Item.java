@@ -2,11 +2,13 @@ package com.main.game.item;
 
 import java.util.Random;
 
+import com.main.game.player.Inventory;
 import com.main.game.player.Player;
 
 public class Item {
 	
 	private static int itemId;
+	private int itemDamage;
 	
 	public static String getItem(int itemId) {
 
@@ -48,8 +50,29 @@ public class Item {
 	    
 
 	}
-
 	
+	public static int setItem(int itemId) {
+		return itemId;
+		
+	}
+	
+	
+	public static int setItemDamage(int itemId) {
+		
+	    switch (itemId) {
+	    
+    	case 1: return 2;
+             
+        case 12:  return 5;
+          
+        case 13:  return 10;
+          
+	}
+	return 0;
+	
+
+	}
+
 	public static int getRandomItem() {
 		
 		double d = Math.random();
@@ -69,6 +92,16 @@ public class Item {
 		}
 		
 	}
+	
+    public static void addthis(int itemId) {
+    	
+    	int item = Item.setItem(itemId);
+    	
+		Inventory newItem = new Inventory (Item.getItem(item));
+		newItem.setItem(Item.getItem(item));
+		Inventory.addtoInventory(newItem.getItem());
+    		
+    }
 	
 
 }

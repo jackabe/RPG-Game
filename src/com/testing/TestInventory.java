@@ -8,6 +8,8 @@ public class TestInventory {
 	public static void main(String[] args) {
 
 		// Add Knife to inventory
+		
+		
 
 		Inventory itemKnife = new Inventory (Item.getItem(9));
 		itemKnife.setItem(Item.getItem(9));

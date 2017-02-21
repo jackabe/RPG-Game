@@ -4,7 +4,7 @@ import com.main.game.item.Item;
 
 public class Inventory {
 	
-	public static ArrayList<String> inventory = new ArrayList<String>();
+	private static ArrayList<String> inventory = new ArrayList<String>();
 	String item;
 	
 	public Inventory(String item) {
@@ -25,7 +25,14 @@ public class Inventory {
 	}
 	
 	public static void printInventory() {
-		    System.out.println("In your inventory you now have: " + inventory);
+		    System.out.println("In your inventory you have: " + inventory);
+	}
+	
+	public static ArrayList<String> getInventory() {
+		
+		ArrayList<String> playerInventory = inventory;
+		return playerInventory;
+		
 	}
 	
 	
