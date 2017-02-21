@@ -6,27 +6,26 @@ import com.main.game.npc.NPC;
  */
 public class Combat {
 
-    public static int iscombat;
-    private static int npcId;
+    public String isCombat;
+    public int npcId;
 
-    private Combat(int iscombat, int npcId) {
+    public Combat(String isCombat) {
 
-        this.iscombat = iscombat;
-        this.npcId = npcId;
+        this.isCombat = isCombat;
 
     }
 
-    public int getIscombat() {
-        return iscombat;
+    public String getIsCombat() {
+        return isCombat;
     }
 
-    public static void setIscombat(int iscombat) {
-        this.iscombat = iscombat;
+    public void setIsCombat(String isCombat) {
+        this.isCombat = isCombat;
     }
 
-    public static void attackNPC() {
+    public void attackNPC() {
 
-        if (iscombat == 1) {
+        if (isCombat.equals("Yes")) {
 
             System.out.println("You attack: " + NPC.getNPC(npcId));
 

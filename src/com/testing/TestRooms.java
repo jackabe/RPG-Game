@@ -63,6 +63,7 @@ public class TestRooms {
 			if (playerDirection == "North") {
 				
 				System.out.println("You enter the " + Room.getRoom(2) + ", where there is a " + NPC.getNPC(2));
+
 				
 				
 			}

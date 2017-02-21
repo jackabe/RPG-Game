@@ -1,6 +1,7 @@
 package com.testing;
 import com.main.game.player.Combat;
-import com.main.game.player.Player;
+
+import java.util.Scanner;
 
 /**
  * Created by c1673107 on 21/02/2017.
@@ -9,9 +10,17 @@ public class CombatTest {
 
     public static void main(String[] args) {
 
-        Combat.setIscombat(1);
+        System.out.println("Would you like to attack the NPC?");
 
-        Combat newattack = new Combat(iscombat, npcId);
-        Player Player1 = new Player(playerName);
+        Scanner sc1 = new Scanner(System.in);
+        String attack1 = sc1.nextLine();
+        sc1.close();
+        System.out.println("-------------------------------");
+
+        Combat newattack = new Combat(attack1);
+        newattack.attackNPC();
+
+
+
     }
 }
