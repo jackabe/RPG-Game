@@ -1,9 +1,13 @@
 package com.main.game.player;
 
+import java.util.Random;
+
 public class Player {
 	
-	private static int playerHealth;
-	public static int playerEnergy = 100;
+	Random rand;
+	final String[] directions = {"North", "East", "South", "West"};
+	private int playerHealth = 100;
+	public int playerEnergy = 100;
 	
 	private String playerName;
 	
@@ -24,34 +28,34 @@ public class Player {
 	
 	// Getters and setters for the players health, inventory and energy
 	
-	public static int getPlayerHealth() {
+	public int getPlayerHealth() {
 		return playerHealth;
 	}
 	
-	public static int getPlayerEnergy() {
+	public int getPlayerEnergy() {
 		return playerEnergy;
 	}
 	
-	public static void setPlayerHealth(int playerHealth) {
-		Player.playerHealth = playerHealth;
+	public void setPlayerHealth(int playerHealth) {
+		this.playerHealth = playerHealth;
 	}
 	
-	public static void setPlayerEnergy(int playerEnergy) {
-		Player.playerEnergy = playerEnergy;
+	public void setPlayerEnergy(int playerEnergy) {
+		this.playerEnergy = playerEnergy;
 	}
 	
-	public static void decreasePlayerEnergy(int playerEnergy) {
-		Player.playerEnergy = playerEnergy - 25;
+	public void decreasePlayerEnergy(int playerEnergy) {
+		this.playerEnergy = playerEnergy - 25;
 	}
 	
-	public static void increasePlayerEnergy(int playerEnergy) {
-		Player.playerEnergy = playerEnergy + 25;
+	public void increasePlayerEnergy(int playerEnergy) {
+		this.playerEnergy = playerEnergy + 25;
 	}
 
-	public static void printEnergyLevel() {
+	public void printEnergyLevel() {
 	    System.out.println("Your Current Energy Level is: " + getPlayerEnergy());
 }
-
 	
 
+	
 }

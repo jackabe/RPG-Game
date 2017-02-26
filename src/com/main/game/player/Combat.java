@@ -11,24 +11,12 @@ import com.main.game.player.Inventory;
 /**
  * Created by c1673107 on 21/02/2017.
  */
-public class Combat {
+public class Combat implements Attackable {
 
     public String isCombat;
     public int npcId;
-    public static int playerHit;
-    public static ArrayList<String> playerInventory;
-
-    public Combat(String isCombat) {
-
-        this.isCombat = isCombat;
-
-    }
-    
-    public Combat(int npcId) {
-
-        this.npcId = npcId;
-
-    }
+    public int playerHit;
+    public ArrayList<String> playerInventory;
 
     public String getIsCombat() {
         return isCombat;
@@ -55,7 +43,7 @@ public class Combat {
     }
     
     @SuppressWarnings("rawtypes")
-	public static void getPlayerStrength(int itemId) {
+	public void getPlayerStrength(int itemId) {
     	
     	playerInventory = Inventory.getInventory(); 
     	List playerInventoryList = Arrays.asList(playerInventory);
@@ -69,5 +57,18 @@ public class Combat {
     		
   	  
     }
+    
+    public Combat(String isCombat) {
+
+        this.isCombat = isCombat;
+
+    }
+    
+    public Combat(int npcId) {
+
+        this.npcId = npcId;
+
+    }
+
 
 }

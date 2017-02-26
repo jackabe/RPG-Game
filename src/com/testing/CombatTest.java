@@ -52,10 +52,10 @@ public class CombatTest {
 
         Combat newattack = new Combat(attack1);
         newattack.attackNPC(1,1);
+        newattack.getPlayerStrength(13);
 
 		// Method that generates player damage according to items in inventory
         
-        Combat.getPlayerStrength(13);
 
         System.out.println("The " + NPC.getNPC(1) + " has health of: " + NPC.getNpcHealth());
         
