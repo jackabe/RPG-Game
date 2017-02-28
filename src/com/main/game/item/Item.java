@@ -7,10 +7,17 @@ import com.main.game.player.Player;
 
 public class Item {
 	
-	private static int itemId;
+	private int itemId;
 	private int itemDamage;
-	
-	public static String getItem(int itemId) {
+
+	public Item() {
+
+	    this.itemId = itemId;
+        this.itemDamage = itemDamage;
+
+    }
+
+	public String getItem(int itemId) {
 
 	    switch (itemId) {
 	    
@@ -51,13 +58,13 @@ public class Item {
 
 	}
 	
-	public static int setItem(int itemId) {
+	public int setItem(int itemId) {
 		return itemId;
 		
 	}
 	
 	
-	public static int setItemDamage(int itemId) {
+	public int setItemDamage(int itemId) {
 		
 	    switch (itemId) {
 	    
@@ -73,7 +80,7 @@ public class Item {
 
 	}
 
-	public static int getRandomItem() {
+	public int getRandomItem() {
 		
 		double d = Math.random();
 		
@@ -93,13 +100,15 @@ public class Item {
 		
 	}
 	
-    public static void addthis(int itemId) {
+    public void addThis(int itemId) {
+
+        Item newitem = new Item();
+    	int item = newitem.setItem(itemId);
     	
-    	int item = Item.setItem(itemId);
-    	
-		Inventory newItem = new Inventory (Item.getItem(item));
-		newItem.setItem(Item.getItem(item));
+		Inventory newItem = new Inventory (newitem.getItem(item));
+		newItem.setItem(newitem.getItem(item));
 		Inventory.addtoInventory(newItem.getItem());
+        Inventory.printInventory();
     		
     }
 	

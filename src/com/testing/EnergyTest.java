@@ -11,10 +11,10 @@ public class EnergyTest {
 	
 		public static void main(String[] args) {
 			
+			Player Player1 = new Player("Jack");
+			Player1.setPlayerEnergy(100);
 			
-			Player.setPlayerEnergy(100);
-			
-			System.out.println(Player.getPlayerEnergy());
+			System.out.println(Player1.getPlayerEnergy());
 			
 	        Scanner sc1 = new Scanner(System.in);
 	        String direction = sc1.nextLine();
@@ -23,28 +23,28 @@ public class EnergyTest {
 	        
 	        // New instance of direction created
 			
-			Room Direction1 = new Room(direction);
-			Direction1.setDirection(direction);
-			String playerDirection = Direction1.getDirection(); 
-			System.out.println("You have chosen to go: " + Direction1.getDirection());
-			
-			if (playerDirection.equals("North")) {
-				
-				System.out.println("You enter the " + Room.getRoom(2) + ", where there is a " + NPC.getNPC(2));
-				Player.decreasePlayerEnergy(Player.getPlayerEnergy());
-		
-				System.out.println("You use some energy overcoming an obstacle. Your energy level is now " + Player.getPlayerEnergy());
-				
-				
-			}
-			
-			else {
-				
-				System.out.println("You enter the " + Room.getRoom(3) + ", where there is a " + NPC.getNPC(3));
-				Player.decreasePlayerEnergy(Player.getPlayerEnergy());		
-				System.out.println("You use some energy overcoming an obstacle. Your energy level is now " + Player.getPlayerEnergy());
-				
-			}
+//			Room Direction1 = new Room(direction);
+//			Direction1.setDirection(direction);
+//			String playerDirection = Direction1.getDirection();
+//			System.out.println("You have chosen to go: " + Direction1.getDirection());
+//
+//			if (playerDirection.equals("North")) {
+//
+//				System.out.println("You enter the " + Room.getRoom(2) + ", where there is a " + NPC.getNPC(2));
+//				Player.decreasePlayerEnergy(Player.getPlayerEnergy());
+//
+//				System.out.println("You use some energy overcoming an obstacle. Your energy level is now " + Player.getPlayerEnergy());
+//
+//
+//			}
+//
+//			else {
+//
+//				System.out.println("You enter the " + Room.getRoom(3) + ", where there is a " + NPC.getNPC(3));
+//				Player.decreasePlayerEnergy(Player.getPlayerEnergy());
+//				System.out.println("You use some energy overcoming an obstacle. Your energy level is now " + Player.getPlayerEnergy());
+//
+//			}
 			
 
 		}
