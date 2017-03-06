@@ -1,0 +1,8 @@
+1 = Knife
+2 = Rat Meat
+3 = Boar Meat
+4 = Chicken Meat
+5 = Trout Meat
+6 = Iron Sword
+7 = Diamond Sword
+8 = Boots of Lightness

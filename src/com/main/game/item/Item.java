@@ -100,18 +100,18 @@ public class Item {
 		
 	}
 	
-    public void addThis(int itemId) {
-
-        Item newitem = new Item();
-    	int item = newitem.setItem(itemId);
-    	
-		Inventory newItem = new Inventory (newitem.getItem(item));
-		newItem.setItem(newitem.getItem(item));
-		Inventory.addtoInventory(newItem.getItem());
-        Inventory.printInventory();
-    		
-    }
-	
+//    public void addThis(int itemId) {
+//
+//        Item newitem = new Item();
+//    	int item = newitem.setItem(itemId);
+//    	
+//		Inventory newItem = new Inventory (newitem.getItem(item));
+//		newItem.setItem(newitem.getItem(item));
+//		Inventory.addtoInventory(newItem.getItem());
+//        Inventory.printInventory();
+//    		
+//    }
+//	
 
 }
 

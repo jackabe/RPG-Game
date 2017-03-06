@@ -3,6 +3,9 @@ package com.main.game.room;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.Scanner;
+
+import com.main.game.npc.NPC;
 
 
 public class Room {
@@ -10,14 +13,13 @@ public class Room {
 	Random rand = new Random();
 	final String[] directions = {"North", "East", "South", "West"};
 	private List<String> rooms;
-	private List<String> temprooms;
 	final int MAX_ROOMS = 8;
+	private String info[];
 	
 
 	public Room() {
 		
-		this.rooms = new ArrayList<String>();
-		this.temprooms = new ArrayList<String>();
+		this.rooms = new ArrayList<>();
 			
 	}
 	
@@ -79,16 +81,15 @@ public class Room {
 		
 		Room newRoom = new Room();
 		
-		if(rooms.contains("Cave Entrance")) {
+		if(rooms.contains(newRoom.getRoom(1))) {
 			 
 			rooms.remove(getRoom(1));
 			System.out.println("You are currently in the " + getRoom(1) + ", look around and find some new rooms");
-			giveOptions();
 			return "";
 			
 		}
 		
-		else if(rooms.contains("Sewer") || rooms.contains("Church") || rooms.contains("Graveyard")  || rooms.contains("Haunted Room") ) {
+		else if(rooms.contains(newRoom.getRoom(2)) || rooms.contains(newRoom.getRoom(3)) || rooms.contains(newRoom.getRoom(4))  || rooms.contains(newRoom.getRoom(5)) ) {
 						
 			int randnum = newRoom.randomRoomNumber();
 			String temproom = newRoom.getRoom(randnum);
@@ -100,7 +101,7 @@ public class Room {
 			}
 			
 			rooms.remove(temproom);
-			return temproom;
+			return "";
 				
 			}
 		
@@ -154,33 +155,88 @@ public class Room {
 
 
 
-	public void giveOptions() {
+	public String[] giveOptions() {
 		
-		temprooms.add(genTempRoom());
-		if (temprooms.contains(genTempRoom())) {
+		String room1 = genTempRoom();
+		String room2 = genTempRoom();
+		String direction1 = randomDirection();
+		String direction2 = randomDirection();
 		
-			System.out.println("You have already been here, but you can go to your " +randomDirection() + " where there is the " +genTempRoom());
-						
-		}
-		
-		
-		else {
+		while (true) {
 			
-			System.out.println("To your " +randomDirection() + " is the " +genTempRoom() + " and to your " +randomDirection() + " is the " +genTempRoom());
+			if (!rooms.contains(room1) || !rooms.contains(room2) || room1 == room2 || direction1 == direction2){
+		
+				giveOptions();
+				break;
+								
+			}
+		
+			else {
+			
+				return new String[] {room1, direction1, room2, direction2};
+			
+		    }
+			
 		}
+		
+		return giveOptions();
+			
+	}
 		
 
+	public void startRoom(String roomName) {
+		
+		System.out.println("========================");	
+		
+		System.out.println("You are now in the " + roomName);
+		System.out.println("You are approached by a " + NPC.generateRandomNPC());
+		
 	}
-	
-	
-//	public int test1() {
-//		
-//		int max = 8;
-//		int min = 6;
-//		
-//		int test1 = min+ rand.nextInt(max - min + 1);
-//		return test1;
-//	}
+		
+	public void givePlayerOptions() {
+		
+	    String options[] = giveOptions();
+	    String room1 = (options[0]);
+	    String room2 = (options[2]);
+	    String direction1 = (options[1]);
+	    String direction2 = (options[3]);
+	    
+	    System.out.println("To your " +direction1 + " is the " +room1 + " and to your " +direction2 + " is the " +room2);
+	    
+		System.out.println("Where would you like to go?");
+		Scanner sc1 = new Scanner(System.in);	
+		String response = sc1.nextLine();
+		
+//	    while (true) {
+//	    	
+//	    	response = sc1.nextLine();
+//	    	
+//	    	if (!response.contains(direction1) || !response.contains(direction2)) {
+//	    		
+//	    		System.out.println("Not a valid answer");
+//	    		continue;
+//	    		
+//	    	}
+//	    	
+//	    	break;
+//	    	
+//	    }	
+		
+	    
+		if (response.contains(direction1)) {
+			
+			startRoom(room1);
+			
+		}
+		
+		else if (response.contains(direction2)) {
+		
+			startRoom(room2);
+			
+		}
+		
+	}
+		
 	
 	public void printRooms() {
 	    System.out.println(rooms);

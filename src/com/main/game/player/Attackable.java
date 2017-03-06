@@ -4,14 +4,16 @@ import java.util.ArrayList;
 
 public interface Attackable {
 	
-	boolean isCombat = true;
+	String isCombat = "yes";
     int npcId = 1;
     int playerHit = 1;
-    ArrayList<String> playerInventory = new ArrayList<>();
+    ArrayList<String> playerInventory = new ArrayList<String>();
 	
-	String getIsCombat(boolean isCombat);
+	String getIsCombat();
+	
+	void setIsCombat(String isCombat);
 
-	void setIsCombat(boolean isCombat);
-
+	void attackNPC(int npcId, int roomNumber);
+	
 	void getPlayerStrength(int itemId);
 }

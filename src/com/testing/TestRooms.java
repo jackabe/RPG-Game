@@ -116,6 +116,7 @@ public class TestRooms {
 		newRoom.addRoom(newRoom.getRoom(7));
 		newRoom.addRoom(newRoom.getRoom(8));
 		newRoom.printRooms();
+
 		
 		System.out.println("========================");	
 		
@@ -143,6 +144,17 @@ public class TestRooms {
 		System.out.println("========================");	
 		newRoom.printRooms();
 
+		System.out.println("========================");	
+		System.out.println(newRoom.generateRoom());	
+		System.out.println("========================");	
+		
+		System.out.println("========================");	
+		System.out.println(newRoom.generateRoom());	
+		System.out.println("========================");	
+		
+		System.out.println("========================");	
+		System.out.println(newRoom.generateRoom());	
+		System.out.println("========================");	
 		
 		
 

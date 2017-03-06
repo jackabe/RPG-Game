@@ -56,6 +56,10 @@ public class Player {
 	    System.out.println("Your Current Energy Level is: " + getPlayerEnergy());
 }
 	
+	public void printHealthLevel() {
+	    System.out.println("Your Current Health Level is: " + getPlayerHealth());
+}
+	
 
 	
 }

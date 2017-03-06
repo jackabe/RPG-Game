@@ -1,37 +1,67 @@
 package com.main.game.player;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.util.ArrayList;
 import com.main.game.item.Item;
 
-public class Inventory {
+public class Inventory implements Runnable, KeyListener {
 	
-	private static ArrayList<String> inventory = new ArrayList<String>();
+	private ArrayList<String> inventory;
 	String item;
 	
-	public Inventory(String item) {
-		this.item = item;
+	public Inventory() {
+		this.inventory = new ArrayList<>();
 	}
 	
 	public String getItem() {
 		return item;
 	}
 	
-	public void setItem(String item) {
-		this.item = item;
-	}
-	
-	public static void addtoInventory(String item) {
+	public void addtoInventory(String item) {
 		inventory.add(item);
+		System.out.println( "A " + item + " has been added to your inventory");
 		
 	}
 	
-	public static void printInventory() {
+	public void printInventory() {
 		    System.out.println("In your inventory you have: " + inventory);
 	}
 	
-	public static ArrayList<String> getInventory() {
+	public ArrayList<String> getInventory() {
 		
 		ArrayList<String> playerInventory = inventory;
 		return playerInventory;
+		
+	}
+
+	@Override
+	public void keyPressed(KeyEvent e) {
+		
+		switch(e.getKeyCode()) {
+		
+		case KeyEvent.VK_SPACE:
+			
+			printInventory();
+		
+		}
+		
+	}
+
+	@Override
+	public void keyReleased(KeyEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void keyTyped(KeyEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
 		
 	}
 	
