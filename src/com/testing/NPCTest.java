@@ -18,6 +18,11 @@ public class NPCTest {
 			
 		System.out.println(NPC.generateRandomNPC());
 		
+		NPC rat = NPC.Rat;
+		System.out.println(rat);
+		
+		System.out.println(NPC.fromIdHealth("Dragon"));
+		System.out.println(NPC.fromIdHit("Dragon"));
 	}
 
 }

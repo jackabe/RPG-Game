@@ -1,21 +1,13 @@
 package com.main.game.item;
+import com.main.game.player.Player;
 
 import java.util.Random;
 
-import com.main.game.player.Inventory;
-import com.main.game.player.Player;
-
-public class Item {
+public class Item extends Player {
 	
-	private int itemId;
 	private int itemDamage;
+	public String[] foods = {"Healing Potion", "Chicken Meat", "Rotten Meat", "Apple", "Rat Meat", "Grapes"};
 
-	public Item() {
-
-	    this.itemId = itemId;
-        this.itemDamage = itemDamage;
-
-    }
 
 	public String getItem(int itemId) {
 
@@ -27,11 +19,11 @@ public class Item {
 	        
 	        case 2:  return "Healing Potion";
 	         
-	        case 3:  return "Boar Meat";
+	        case 3:  return "Emerald";
 	         
 	        case 4:  return "Chicken Meat";
 	          
-	        case 5:  return "Trout Meat";
+	        case 5:  return "Rotten meat";
 	           
 	        case 6:  return "Gold";
 	         
@@ -43,13 +35,15 @@ public class Item {
 	        
 	        case 10:  return "Rat Meat";
 	         
-	        case 11:  return "Pork Meat ";
+	        case 11:  return "Grapes";
 	         
 	        case 12:  return "Iron Sword";
 	          
 	        case 13:  return "Diamond Sword";
 	           
 	        case 14:  return "Boots of Lightness"; 
+	        
+	        case 15:  return "Bones"; 
 
 		}
 	    
@@ -64,20 +58,26 @@ public class Item {
 	}
 	
 	
-	public int setItemDamage(int itemId) {
+	public void setItemDamage(int itemId) {
 		
 	    switch (itemId) {
 	    
-    	case 1: return 2;
+    	case 9: this.itemDamage = 15;
+    			break;
              
-        case 12:  return 5;
+        case 12: this.itemDamage = 20;
+        		break;
           
-        case 13:  return 10;
+        case 13: this.itemDamage = 27;
+        		break;
           
 	}
-	return 0;
-	
 
+	}
+	
+	public int getItemDamage() {
+		
+		return itemDamage;
 	}
 
 	public int getRandomItem() {

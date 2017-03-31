@@ -9,40 +9,57 @@ public enum NPC {
 	
 	// Name, health and damage capability of each monster
 	
-	Rat("It's just a small Rat", 1, 1),
-	Spider("Quite big, for a Spider", 2, 2),
-	Skeleton("This thing needs to eat...", 10, 3),
-	Zombie("The Walking Dead", 10, 4),
-	Ghost("A Trapped Soul..", 15, 5),
-	Demon("A Devil, hits quite hard..", 40, 7),
-	Giant("This Giant is tough...", 80, 8),
-	Dragon("The King Dragon, Food and Anti-Fire Shield strongly recommened ", 150, 10);
+	Rat("Rat", "It's just a small Rat", 1, 1, 10),
+	Spider("Spider", "Quite big, for a Spider", 2, 3, 7),
+	Skeleton("Skeleton", "This thing needs to eat...", 10, 5, 8),
+	Zombie("Zombie", "The Walking Dead", 10, 5, 5),
+	Ghost("Ghost", "A Trapped Soul..", 15, 6, 11),
+	Giant("Giant", "This Giant is very big...", 40, 7, 12),
+	Demon("Demon", "A Devil, it hits quite hard..", 80, 10, 13),
+	Dragon("Dragon", "The King Dragon, The Hardest and most Terrifying of foes.. ", 110, 15, 1);
 	
+	private final String npcName;
 	private final String desc;
-	private final int health;
+	private int npcHealth;
 	private final int damage;
+	private final int drop;
 	
 	private static final List<NPC> npcs = Collections.unmodifiableList(Arrays.asList(values()));
 	private static final int size = 5;
 	private static final Random RANDOM = new Random();
 	
-	NPC(String desc, int health, int damage) {
+	NPC(String npcName, String desc, int npcHealth, int damage, int drop) {
 		
 		this.desc = desc;
-		this.health = health;
+		this.npcHealth = npcHealth;
 		this.damage = damage;
+		this.npcName = npcName;
+		this.drop = drop;
+		
 	}
 	
 	public String getDesc() {
 		return desc;
 	}
 	
+	public String getName() {
+		return npcName;
+	}
+	
 	public int getHealth() {
-		return health;
+		return npcHealth;
+	}
+	
+	public void setHealth(int npcHealth) {
+		this.npcHealth = npcHealth;
 	}
 	
 	public int getDamage() {
 		return damage;
+	}
+	
+	public int getDrop() {
+		return drop;
 	}
 	
 	public static NPC generateRandomNPC() {
@@ -51,5 +68,33 @@ public enum NPC {
 		
 	}
 	
+	public static int fromIdHealth(String npcName) {
+        for (NPC npc : NPC.values()) {
+            if (npc.npcName.equals(npcName)) {
+                return npc.getHealth();
+            }
+        }
+        throw new IllegalArgumentException();
+	}
+	
+	public static int fromIdDrop(String npcName) {
+        for (NPC npc : NPC.values()) {
+            if (npc.npcName.equals(npcName)) {
+                return npc.getDrop();
+            }
+        }
+        throw new IllegalArgumentException();
+	}
+	
+	public static int fromIdHit(String npcName) {
+        for (NPC npc : NPC.values()) {
+            if (npc.npcName.equals(npcName)) {
+                return npc.getDamage();
+            }
+        }
+        throw new IllegalArgumentException();
+	}
+	
+
 }
 

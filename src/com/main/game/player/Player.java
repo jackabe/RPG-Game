@@ -1,63 +1,83 @@
 package com.main.game.player;
 
-import java.util.Random;
-
 public class Player {
 	
-	Random rand;
-	final String[] directions = {"North", "East", "South", "West"};
-	private int playerHealth = 100;
+	public int playerHealth = 100;
 	public int playerEnergy = 100;
 	
 	private String playerName;
 	
 	// Constructor and Methods to get and set the players name
 	
-	public Player(String playerName) {
-		this.playerName = playerName;
+	public Player() {
+		
+		this.playerName = getPlayerName();
+		
 	}
 	
 	
 	public String getPlayerName() {
+		
 		return playerName;
+		
 	}
 	
 	public void setPlayerName(String playerName) {
+		
 		this.playerName = playerName;
+		
 	}
 	
 	// Getters and setters for the players health, inventory and energy
 	
 	public int getPlayerHealth() {
+		
 		return playerHealth;
+		
 	}
 	
 	public int getPlayerEnergy() {
+		
 		return playerEnergy;
-	}
-	
-	public void setPlayerHealth(int playerHealth) {
-		this.playerHealth = playerHealth;
+		
 	}
 	
 	public void setPlayerEnergy(int playerEnergy) {
+		
 		this.playerEnergy = playerEnergy;
+		
 	}
 	
 	public void decreasePlayerEnergy(int playerEnergy) {
-		this.playerEnergy = playerEnergy - 25;
+		
+		this.playerEnergy = playerEnergy - 10;
+		System.out.println("================================");
+		System.out.println("You use some energy to move rooms...");
+		System.out.println("================================");
+		printEnergyLevel();
+		
 	}
 	
 	public void increasePlayerEnergy(int playerEnergy) {
-		this.playerEnergy = playerEnergy + 25;
+		
+		this.playerEnergy = playerEnergy + 10;
+		System.out.println("================================");
+		System.out.println("You gain some energy from eating...");
+		System.out.println("================================");
+		printEnergyLevel();
+		
 	}
 
 	public void printEnergyLevel() {
+		
 	    System.out.println("Your Current Energy Level is: " + getPlayerEnergy());
+	    
 }
 	
 	public void printHealthLevel() {
+		
 	    System.out.println("Your Current Health Level is: " + getPlayerHealth());
+	    
 }
 	
 

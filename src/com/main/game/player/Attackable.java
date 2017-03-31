@@ -1,19 +1,26 @@
 package com.main.game.player;
 
-import java.util.ArrayList;
-
 public interface Attackable {
 	
-	String isCombat = "yes";
-    int npcId = 1;
-    int playerHit = 1;
-    ArrayList<String> playerInventory = new ArrayList<String>();
-	
-	String getIsCombat();
-	
-	void setIsCombat(String isCombat);
+    void setPlayerHit();
+    
+    int getPlayerHit();
+    
+    int getPlayerHealth();
+    
+    void setPlayerHealth(int playerHealth);
+    
+    int getNpcHit();
+    
+    int getNpcHealth();
+   
+    void setNpcHit(String npcName);
+   
+    void setNpcHealth(String npcName);
+    
+    void startCombat(String npcName);
 
-	void attackNPC(int npcId, int roomNumber);
-	
-	void getPlayerStrength(int itemId);
+    int getDrop();
+    
+    void setDrop(String npcName);
 }

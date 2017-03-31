@@ -1,13 +1,11 @@
 package com.main;
 import com.main.game.room.Room;
-
-import java.util.Scanner;
-
 import com.main.game.Welcome;
 import com.main.game.item.Item;
 import com.main.game.player.Inventory;
 import com.main.game.player.Player;
-import com.main.game.room.Room;
+
+import java.util.Scanner;
 
 public class Launcher {
 
@@ -19,13 +17,47 @@ public class Launcher {
 		System.out.println("================================");
 		
 		System.out.println("What would you like your player name to be?");
-        Scanner sc1 = new Scanner(System.in);
+        @SuppressWarnings("resource")
+		Scanner sc1 = new Scanner(System.in);
         String playername = sc1.nextLine();
         
-        System.out.println("Good luck, " +playername);
-        System.out.println("================================");
-		
-		Player newPlayer = new Player(playername);
+        while (true) { 
+        	
+        	if (playername.length() >= 1) {
+        		
+        		playername = Capitalize.setStringCase(playername);
+                System.out.println("Good luck, " +playername);
+                System.out.println("================================");
+   
+        	}
+        	
+        	else {
+        		
+        		while (playername.length() < 1) {
+        			
+            		System.out.println("Invalid Player Name. Please ensure your name is greater than 1 character/digit.");
+            		playername = sc1.nextLine();
+            		
+                	if (playername.length() >= 1) {
+                		
+                		playername = Capitalize.setStringCase(playername);
+                        System.out.println("Good luck, " +playername);
+                        System.out.println("================================");
+                        break;
+           
+                	}
+        			
+        		}
+        		          
+        	}
+        	break;
+        	
+        }
+        	
+        	
+        	
+		Player newPlayer = new Player();
+		newPlayer.setPlayerName(playername);
 
 		newPlayer.printEnergyLevel();
 		newPlayer.printHealthLevel();
@@ -33,10 +65,10 @@ public class Launcher {
 		System.out.println("================================");
 
         // Give player knife
-		Inventory inventory = new Inventory();
+		
 		Item item = new Item();
-		inventory.addtoInventory(item.getItem(9));
-    	inventory.printInventory();
+		
+		Inventory.addtoInventory(item.getItem(9));
 
 		System.out.println("================================");
 		
@@ -53,34 +85,39 @@ public class Launcher {
 		newRoom.addRoom(newRoom.getRoom(7));
 		newRoom.addRoom(newRoom.getRoom(8));
 		
-		newRoom.generateRoom();
-		newRoom.givePlayerOptions();
+		newRoom.startingRoom();
+		newRoom.giveOptions();
 		
 		System.out.println("========================");	
 		
-		newRoom.generateRoom();
-		newRoom.givePlayerOptions();
+		newRoom.giveOptions();
 		
 		System.out.println("========================");	
 		
-		newRoom.generateRoom();
-		newRoom.givePlayerOptions();
+		newRoom.giveOptions();
+
+		System.out.println("========================");	
+		
+		newRoom.giveOptions();
 		
 		System.out.println("========================");	
 		
-		newRoom.generateRoom();
-		newRoom.givePlayerOptions();
+		
+		newRoom.giveOptions();
+		
+		System.out.println("========================");	
 
 		
+		newRoom.giveOptions();
 		
+		System.out.println("========================");	
+
 		
-
-
-
-
-
-
+		newRoom.giveOptions();
+		
+		System.out.println("========================");	
 
 	}
 
 }
+
