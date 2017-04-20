@@ -14,8 +14,7 @@ public class Player {
 		this.playerName = getPlayerName();
 		
 	}
-	
-	
+
 	public String getPlayerName() {
 		
 		return playerName;

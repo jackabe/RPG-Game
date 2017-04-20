@@ -4,10 +4,9 @@ import com.main.game.player.Player;
 import java.util.Random;
 
 public class Item extends Player {
-	
+
 	private int itemDamage;
 	public String[] foods = {"Healing Potion", "Chicken Meat", "Rotten Meat", "Apple", "Rat Meat", "Grapes"};
-
 
 	public String getItem(int itemId) {
 
@@ -17,11 +16,11 @@ public class Item extends Player {
 	    
 	        case 1:  return "Diamond";
 	        
-	        case 2:  return "Healing Potion";
+	        case 2:  return "Healing potion";
 	         
 	        case 3:  return "Emerald";
 	         
-	        case 4:  return "Chicken Meat";
+	        case 4:  return "Chicken meat";
 	          
 	        case 5:  return "Rotten meat";
 	           
@@ -29,11 +28,11 @@ public class Item extends Player {
 	         
 	        case 7:  return "Apple";
 	       
-	        case 8:  return "Energy Potion";   
+	        case 8:  return "Energy potion";
 	        
 	        case 9:  return "Knife";
 	        
-	        case 10:  return "Rat Meat";
+	        case 10:  return "Rat meat";
 	         
 	        case 11:  return "Grapes";
 	         
@@ -48,16 +47,13 @@ public class Item extends Player {
 		}
 	    
 		return "";
-	    
-
 	}
-	
+
 	public int setItem(int itemId) {
 		return itemId;
-		
+
 	}
-	
-	
+
 	public void setItemDamage(int itemId) {
 		
 	    switch (itemId) {
@@ -99,19 +95,6 @@ public class Item extends Player {
 		}
 		
 	}
-	
-//    public void addThis(int itemId) {
-//
-//        Item newitem = new Item();
-//    	int item = newitem.setItem(itemId);
-//    	
-//		Inventory newItem = new Inventory (newitem.getItem(item));
-//		newItem.setItem(newitem.getItem(item));
-//		Inventory.addtoInventory(newItem.getItem());
-//        Inventory.printInventory();
-//    		
-//    }
-//	
 
 }
 

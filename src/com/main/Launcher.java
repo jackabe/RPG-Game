@@ -11,70 +11,57 @@ public class Launcher {
 
 	public static void main(String[] args) {
 
+        Welcome welcome;
+	    welcome = new Welcome();
+        Player newPlayer;
+        newPlayer = new Player();
+        Item item;
+        item = new Item();
+        Inventory playerInventory;
+        Room newRoom = new Room();
 
-		System.out.println(Welcome.getWelcome());
+        System.out.println(welcome.getWelcome());
 
 		System.out.println("================================");
 		
 		System.out.println("What would you like your player name to be?");
-        @SuppressWarnings("resource")
 		Scanner sc1 = new Scanner(System.in);
-        String playername = sc1.nextLine();
+        String playerName = sc1.nextLine();
         
         while (true) { 
         	
-        	if (playername.length() >= 1) {
-        		
-        		playername = Capitalize.setStringCase(playername);
-                System.out.println("Good luck, " +playername);
+        	if (playerName.length() >= 1) {
+                playerName = Capitalize.setStringCase(playerName);
+                System.out.println("Good luck, " +playerName);
                 System.out.println("================================");
-   
         	}
         	
         	else {
-        		
-        		while (playername.length() < 1) {
-        			
+        		while (playerName.length() < 1) {
             		System.out.println("Invalid Player Name. Please ensure your name is greater than 1 character/digit.");
-            		playername = sc1.nextLine();
+                    playerName = sc1.nextLine();
             		
-                	if (playername.length() >= 1) {
-                		
-                		playername = Capitalize.setStringCase(playername);
-                        System.out.println("Good luck, " +playername);
+                	if (playerName.length() >= 1) {
+                        playerName = Capitalize.setStringCase(playerName);
+                        System.out.println("Good luck, " +playerName);
                         System.out.println("================================");
                         break;
-           
                 	}
-        			
         		}
-        		          
         	}
         	break;
-        	
         }
-        	
-        	
-        	
-		Player newPlayer = new Player();
-		newPlayer.setPlayerName(playername);
 
+		newPlayer.setPlayerName(playerName);
 		newPlayer.printEnergyLevel();
 		newPlayer.printHealthLevel();
 		
 		System.out.println("================================");
-
         // Give player knife
-		
-		Item item = new Item();
-		
-		Inventory.addtoInventory(item.getItem(9));
+		Inventory.getInstance().addToInventory(item.getItem(9));
 
 		System.out.println("================================");
-		
 		// Rooms generated
-
-		Room newRoom = new Room(); 
 
 		newRoom.addRoom(newRoom.getRoom(1));
 		newRoom.addRoom(newRoom.getRoom(2));
@@ -88,33 +75,18 @@ public class Launcher {
 		newRoom.startingRoom();
 		newRoom.giveOptions();
 		
-		System.out.println("========================");	
-		
+		System.out.println("========================");
 		newRoom.giveOptions();
-		
-		System.out.println("========================");	
-		
+		System.out.println("========================");
 		newRoom.giveOptions();
-
-		System.out.println("========================");	
-		
+		System.out.println("========================");
 		newRoom.giveOptions();
-		
-		System.out.println("========================");	
-		
-		
+		System.out.println("========================");
 		newRoom.giveOptions();
-		
-		System.out.println("========================");	
-
-		
+		System.out.println("========================");
 		newRoom.giveOptions();
-		
-		System.out.println("========================");	
-
-		
+		System.out.println("========================");
 		newRoom.giveOptions();
-		
 		System.out.println("========================");	
 
 	}

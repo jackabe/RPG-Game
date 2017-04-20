@@ -23,10 +23,12 @@ public enum NPC {
 	private int npcHealth;
 	private final int damage;
 	private final int drop;
-	
+
+//	http://stackoverflow.com/questions/16356232/unmodifiable-list-in-java
+//	https://www.tutorialspoint.com/java/util/collections_unmodifiablelist.htm
 	private static final List<NPC> npcs = Collections.unmodifiableList(Arrays.asList(values()));
 	private static final int size = 5;
-	private static final Random RANDOM = new Random();
+	private static final Random random = new Random();
 	
 	NPC(String npcName, String desc, int npcHealth, int damage, int drop) {
 		
@@ -64,18 +66,24 @@ public enum NPC {
 	
 	public static NPC generateRandomNPC() {
 		
-		return npcs.get((RANDOM.nextInt(size)));
+		return npcs.get((random.nextInt(size)));
 		
 	}
 	
 	public static int fromIdHealth(String npcName) {
-        for (NPC npc : NPC.values()) {
-            if (npc.npcName.equals(npcName)) {
-                return npc.getHealth();
+        try {
+            for (NPC npc : NPC.values()) {
+                if (npc.npcName.equals(npcName)) {
+                    return npc.getHealth();
+                }
             }
+            throw new IllegalArgumentException("Error at Npc");
+        } catch (IllegalArgumentException e) {
+            System.out.println("Caught an error..." + e.getMessage());
         }
-        throw new IllegalArgumentException();
-	}
+        return 0;
+    }
+
 	
 	public static int fromIdDrop(String npcName) {
         for (NPC npc : NPC.values()) {
