@@ -9,30 +9,14 @@
 //
 //		// Add Knife to inventory
 //
+//        Item item = new Item();
+//		Inventory inventory = new Inventory();
+//		inventory.addToInventory(item.getItem(9));
+//        System.out.println(item.getItem(9));
 //
-//
-////		Inventory itemKnife = new Inventory (Item.getItem(9));
-////		itemKnife.setItem(Item.getItem(9));
-////		Inventory.addtoInventory(itemKnife.getItem());
-////
-////		// Add diamond to inventory
-////
-////		Inventory item1 = new Inventory (Item.getItem(1));
-////		item1.setItem(Item.getItem(1));
-////		Inventory.addtoInventory(item1.getItem());
-////
-////		// Add board meat to inventory too
-////
-////		Inventory item2 = new Inventory (Item.getItem(3));
-////		item2.setItem(Item.getItem(3));
-////		Inventory.addtoInventory(item2.getItem());
-////		Inventory.printInventory();
+//		inventory.printInventory();
 //
 //		Item item1 = new Item();
-//		item1.addThis(5);
-////
-//
-//
 //
 //	}
 //

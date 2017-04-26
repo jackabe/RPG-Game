@@ -21,8 +21,8 @@ public class NPCTest {
 		NPC rat = NPC.Rat;
 		System.out.println(rat);
 		
-		System.out.println(NPC.fromIdHealth("Dragon"));
-		System.out.println(NPC.fromIdHit("Dragon"));
+		System.out.println(NPC.getHealth("Dragon"));
+		System.out.println(NPC.getHit("Dragon"));
 	}
 
 }

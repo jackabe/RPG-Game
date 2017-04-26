@@ -49,8 +49,8 @@ public class Item extends Player {
 		return "";
 	}
 
-	public int setItem(int itemId) {
-		return itemId;
+	public void setItem(int itemId) {
+
 
 	}
 
@@ -78,9 +78,9 @@ public class Item extends Player {
 
 	public int getRandomItem() {
 		
-		double d = Math.random();
+		double number = Math.random();
 		
-		if (d < 0.4) {
+		if (number < 0.4) {
 	
 			Random rand = new Random();
 			int randomItem = rand.nextInt(8) + 1;

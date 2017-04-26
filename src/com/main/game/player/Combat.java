@@ -22,6 +22,7 @@ public class Combat extends Inventory implements Attackable {
     private int npcHealth;
     private int drop;
     private int randomItem = getRandomItem();
+    // Instance singelton idea - http://stackoverflow.com/questions/43393196/java-arraylist-is-returning-empty?noredirect=1#comment73848343_43393196
     private ArrayList<String> playerInventory = getInstance().getInventory();
     private Inventory inventory = Inventory.getInstance();
 
@@ -61,7 +62,7 @@ public class Combat extends Inventory implements Attackable {
 
     @Override
     public void setNpcHit(String npcName) {
-        this.npcHit = NPC.fromIdHit(npcName);
+        this.npcHit = NPC.getHit(npcName);
     }
 
 
@@ -73,7 +74,7 @@ public class Combat extends Inventory implements Attackable {
 
     @Override
     public void setNpcHealth(String npcName) {
-        this.npcHealth = NPC.fromIdHealth(npcName);
+        this.npcHealth = NPC.getHealth(npcName);
     }
 
 
@@ -101,10 +102,10 @@ public class Combat extends Inventory implements Attackable {
 
     @Override
     public void setDrop(String npcName) {
-        this.drop = NPC.fromIdDrop(npcName);
+        this.drop = NPC.getDrop(npcName);
     }
 
-    public void eatFood() {
+    public void inventoryChoice() {
         System.out.println("Which food would you like to eat?");
         printInventory();
 
@@ -167,7 +168,7 @@ public class Combat extends Inventory implements Attackable {
                 int randomDamage = rand.nextInt(playerHit);
                 int randomNPCDamage = rand.nextInt(npcHit);
 
-                playerHealth -= randomNPCDamage;
+                playerHealth = playerHealth - randomNPCDamage;
                 npcHealth -= randomDamage;
 
                 System.out.println("\t> You hit the " + npcName + " and " + randomDamage + " is dealt");
@@ -190,7 +191,7 @@ public class Combat extends Inventory implements Attackable {
                 printScore();
                 System.exit(0);
             } else if (input.equals("3")) {
-                eatFood();
+                inventoryChoice();
                 continue;
             } else {
                 System.out.println("Invalid command");

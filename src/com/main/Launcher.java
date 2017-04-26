@@ -23,24 +23,24 @@ public class Launcher {
         System.out.println(welcome.getWelcome());
 
 		System.out.println("================================");
-		
+
 		System.out.println("What would you like your player name to be?");
 		Scanner sc1 = new Scanner(System.in);
         String playerName = sc1.nextLine();
-        
-        while (true) { 
-        	
+
+        while (true) {
+
         	if (playerName.length() >= 1) {
                 playerName = Capitalize.setStringCase(playerName);
                 System.out.println("Good luck, " +playerName);
                 System.out.println("================================");
         	}
-        	
+
         	else {
         		while (playerName.length() < 1) {
             		System.out.println("Invalid Player Name. Please ensure your name is greater than 1 character/digit.");
                     playerName = sc1.nextLine();
-            		
+
                 	if (playerName.length() >= 1) {
                         playerName = Capitalize.setStringCase(playerName);
                         System.out.println("Good luck, " +playerName);
@@ -55,7 +55,7 @@ public class Launcher {
 		newPlayer.setPlayerName(playerName);
 		newPlayer.printEnergyLevel();
 		newPlayer.printHealthLevel();
-		
+
 		System.out.println("================================");
         // Give player knife
 		Inventory.getInstance().addToInventory(item.getItem(9));
@@ -71,10 +71,10 @@ public class Launcher {
 		newRoom.addRoom(newRoom.getRoom(6));
 		newRoom.addRoom(newRoom.getRoom(7));
 		newRoom.addRoom(newRoom.getRoom(8));
-		
+
 		newRoom.startingRoom();
 		newRoom.giveOptions();
-		
+
 		System.out.println("========================");
 		newRoom.giveOptions();
 		System.out.println("========================");
@@ -87,7 +87,7 @@ public class Launcher {
 		newRoom.giveOptions();
 		System.out.println("========================");
 		newRoom.giveOptions();
-		System.out.println("========================");	
+		System.out.println("========================");
 
 	}
 

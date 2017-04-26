@@ -70,7 +70,7 @@ public enum NPC {
 		
 	}
 	
-	public static int fromIdHealth(String npcName) {
+	public static int getHealth(String npcName) {
         try {
             for (NPC npc : NPC.values()) {
                 if (npc.npcName.equals(npcName)) {
@@ -85,7 +85,7 @@ public enum NPC {
     }
 
 	
-	public static int fromIdDrop(String npcName) {
+	public static int getDrop(String npcName) {
         for (NPC npc : NPC.values()) {
             if (npc.npcName.equals(npcName)) {
                 return npc.getDrop();
@@ -94,7 +94,7 @@ public enum NPC {
         throw new IllegalArgumentException();
 	}
 	
-	public static int fromIdHit(String npcName) {
+	public static int getHit(String npcName) {
         for (NPC npc : NPC.values()) {
             if (npc.npcName.equals(npcName)) {
                 return npc.getDamage();

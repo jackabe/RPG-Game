@@ -88,40 +88,40 @@ public class Room extends Combat{
 	
 	
 	private String[] randomDirections() {
-		int index1 = rand.nextInt(directions.length);
-		int index2 = rand.nextInt(directions.length);
+		int numberOne = rand.nextInt(directions.length);
+		int numberTwo = rand.nextInt(directions.length);
 		
-		String direction1 = directions[index1];
-		String direction2 = directions[index2];
+		String direction1 = directions[numberOne];
+		String direction2 = directions[numberTwo];
 
-		if (index1 == index2) {
-			if (index1 >= 1 ) {
-				direction1 = directions[index1-1];
+		if (numberOne == numberTwo) {
+			if (numberOne >= 1 ) {
+				direction1 = directions[numberOne-1];
 			}
 			
-			else if (index1 <= 1) {
-				direction1 = directions[index1+1];
+			else if (numberOne <= 1) {
+				direction1 = directions[numberOne+1];
 			}
 		}
 		return new String[] {direction1, direction2};
 	}
 	
 	public String[] randomRooms() {
-		int index1 = rand.nextInt(4) + 2;
-		String room1 = getRoom(index1);
+		int numberOne = rand.nextInt(4) + 2;
+		String room1 = getRoom(numberOne);
 
-		int index2 = rand.nextInt(4) + 2;
-		String room2 = getRoom(index2);
+		int numberTwo = rand.nextInt(4) + 2;
+		String room2 = getRoom(numberTwo);
 		
-		if (index1 == index2) {
-			if (index1 > 2 ) {
-				index1 = index1-1;
-				room1 = getRoom(index1);
+		if (numberOne == numberTwo) {
+			if (numberOne > 2 ) {
+				numberOne = numberOne-1;
+				room1 = getRoom(numberOne);
 			}
 			
-			else if (index1 == 2) {
-				index1 = index1+1;
-				room1 = getRoom(index1);
+			else if (numberOne == 2) {
+				numberOne = numberOne+1;
+				room1 = getRoom(numberOne);
 			}
 		}
 
